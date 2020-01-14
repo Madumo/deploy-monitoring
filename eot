@@ -1,4 +1,4 @@
- cat > /tmp/test.conf
+ cat > /etc/filebeat/filebeat.yml
 		filebeat.inputs:
 		- type: log
 		  enabled: true
@@ -12,8 +12,8 @@
 		  index.number_of_shards: 1
 		output.elasticsearch:
 		  hosts: ["10.1.2.100:9200","10.1.2.101:9200","10.1.2.102:9200"]
-		  username: "$ES_USER"
-		  password: "$ES_PASS"
+		  username: "ESUSER"
+		  password: "ESPASS"
 		processors:
 		  - add_host_metadata: ~
 		  - add_cloud_metadata: ~
@@ -21,5 +21,5 @@
 		monitoring.cluster_uuid: "mt0otTWNSR2TjgwO2znzSA"
 		monitoring.elasticsearch:
 		  hosts: ["10.1.2.100:9200","10.1.2.101:9200","10.1.2.102:9200"]
-		  username: "$ES_USER"
-		  password: "$ES_PASS"
+		  username: "ESUSER"
+		  password: "ESPASS"
