@@ -1,5 +1,5 @@
  cat > /etc/filebeat/filebeat.yml
- filebeat.inputs:
+filebeat.inputs:
 - type: log
   enabled: true
   paths:
