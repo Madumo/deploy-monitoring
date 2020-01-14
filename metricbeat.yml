@@ -1,0 +1,14 @@
+cat >
+metricbeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+setup.template.settings:
+  index.number_of_shards: 1
+  index.codec: best_compression
+output.elasticsearch:
+  hosts: ["10.1.2.100:9200","10.1.2.101:9200","10.1.2.102:9200"]
+  username: "ESUSER"
+  password: "ESPASS"
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~
